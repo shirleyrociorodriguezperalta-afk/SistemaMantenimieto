@@ -1,0 +1,59 @@
+﻿@model SistemaMantenimiento.Models.LoginViewModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sistema Mantenimiento</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light d-flex align-items-center min-vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5 col-lg-4">
+                <div class="card shadow-lg border-0 rounded-3">
+                    <div class="card-body p-4 p-sm-5 text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                            <i class="bi bi-tools fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1">Mantenimiento Univ.</h4>
+                        <p class="text-muted small mb-4">Ingresa tus credenciales para acceder</p>
+
+                        <form asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                            <div class="form-floating mb-3 text-start">
+                                <input asp-for="Username" class="form-control" placeholder="Usuario" autofocus />
+                                <label asp-for="Username"></label>
+                                <span asp-validation-for="Username" class="text-danger small"></span>
+                            </div>
+
+                            <div class="form-floating mb-3 text-start">
+                                <input asp-for="Password" class="form-control" placeholder="Contraseña" />
+                                <label asp-for="Password"></label>
+                                <span asp-validation-for="Password" class="text-danger small"></span>
+                            </div>
+
+                            <div class="form-check text-start mb-3">
+                                <input asp-for="RememberMe" class="form-check-input" />
+                                <label asp-for="RememberMe" class="form-check-label"></label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 py-2 shadow-sm">
+                                <i class="bi bi-box-arrow-in-right me-1"></i> Iniciar Sesión
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

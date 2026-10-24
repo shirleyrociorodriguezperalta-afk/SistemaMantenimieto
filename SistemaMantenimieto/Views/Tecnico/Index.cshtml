@@ -1,0 +1,94 @@
+﻿@model IEnumerable<SistemaMantenimiento.Entities.Tecnico>
+
+@{
+    ViewData["Title"] = "Gestión de Técnicos";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2><i class="bi bi-person-badge me-2"></i>Gestión de Técnicos</h2>
+    <a asp-action="Crear" class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i> Nuevo Técnico
+    </a>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+        <table id="tablaTecnicos" class="table table-striped table-hover align-middle w-100">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Especialidad</th>
+                    <th>Correo Electrónico</th>
+                    <th>Estado</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tecnico in Model)
+                {
+                    <tr>
+                        <td>@tecnico.IdTecnico</td>
+                        <td><span class="fw-bold">@tecnico.Nombre</span></td>
+                        <td>@(string.IsNullOrEmpty(tecnico.Especialidad) ? "Sin Especialidad" : tecnico.Especialidad)</td>
+                        <td>@(string.IsNullOrEmpty(tecnico.Correo) ? "Sin Correo" : tecnico.Correo)</td>
+                        <td>
+                            @if (tecnico.Activo == 1)
+                            {
+                                <span class="badge bg-success">
+                                    <i class="bi bi-check-circle me-1"></i> Activo
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">
+                                    <i class="bi bi-x-circle me-1"></i> Inactivo
+                                </span>
+                            }
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="Editar" asp-route-id="@tecnico.IdTecnico" class="btn btn-sm btn-outline-primary" title="Editar">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="confirmarEliminacion(@tecnico.IdTecnico)" title="Eliminar">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#tablaTecnicos').DataTable({
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json"
+                },
+                "pageLength": 10,
+                "responsive": true,
+                "order": [[0, "desc"]]
+            });
+        });
+
+        function confirmarEliminacion(id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Esta acción dará de baja o eliminará al técnico del registro.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/Tecnico/Eliminar/' + id;
+                }
+            });
+        }
+    </script>
+}

@@ -1,0 +1,59 @@
+﻿@model SistemaMantenimiento.Models.EquipoViewModel
+
+@{
+    ViewData["Title"] = "Registrar Equipo";
+}
+
+<div class="container mt-4" style="max-width: 600px;">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">➕ Registrar Nuevo Equipo</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Crear" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="CodigoActivo" class="form-label font-weight-bold"></label>
+                    <input asp-for="CodigoActivo" class="form-control" placeholder="Ej: UNI-LAB1-PC05" />
+                    <span asp-validation-for="CodigoActivo" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Nombre" class="form-label font-weight-bold"></label>
+                    <input asp-for="Nombre" class="form-control" placeholder="Ej: HP ProDesk 400 G6" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IdTipoEquipo" class="form-label font-weight-bold"></label>
+                    <select asp-for="IdTipoEquipo" class="form-select" asp-items="Model.TiposEquipo">
+                        <option value="">-- Seleccione Categoría --</option>
+                    </select>
+                    <span asp-validation-for="IdTipoEquipo" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Ubicacion" class="form-label font-weight-bold"></label>
+                    <input asp-for="Ubicacion" class="form-control" placeholder="Ej: Aula 204" />
+                    <span asp-validation-for="Ubicacion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EstadoOperativo" class="form-label font-weight-bold"></label>
+                    <select asp-for="EstadoOperativo" class="form-select">
+                        <option value="Operativo">Operativo</option>
+                        <option value="En Mantenimiento">En Mantenimiento</option>
+                        <option value="Fuera de Servicio">Fuera de Servicio</option>
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-success">Guardar Equipo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

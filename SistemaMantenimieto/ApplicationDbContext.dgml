@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Equipo" Category="EntityType" Annotations="Relational:TableName: Equipo RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="43.1440650092208,603.580557587438,375.24,253.84" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Equipo" Name="Equipo" />
+    <Node Id="Equipo.CodigoActivo" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="207.887398342554,755.500557587438,132.186666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="CodigoActivo (string)" MaxLength="(50)" Name="CodigoActivo" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Equipo.EstadoOperativo" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="63.1440650092208,811.460557587438,148.463333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="EstadoOperativo (string)" MaxLength="(50)" Name="EstadoOperativo" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Equipo.FechaIngreso" Category="Property Optional" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="241.607398342554,811.460557587438,156.776666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="False" IsShadow="False" IsUnicode="True" Label="FechaIngreso (DateTime?)" MaxLength="None" Name="FechaIngreso" PropertyAccessMode="PropertyAccessMode.Default" Type="DateTime?" ValueGenerated="None" />
+    <Node Id="Equipo.IdEquipo" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="63.1440650092208,643.580557587438,91.4666666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdEquipo (int)" MaxLength="None" Name="IdEquipo" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Equipo.IdTipoEquipo" Category="Property Foreign" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="63.1440650092208,755.500557587438,114.743333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdTipoEquipo (int)" MaxLength="None" Name="IdTipoEquipo" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Equipo.Nombre" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="63.1440650092208,699.540557587438,104.47,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Nombre (string)" MaxLength="(100)" Name="Nombre" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Equipo.TipoEquipo" Category="Navigation Property" Bounds="184.610731675887,643.580557587438,97.1900000000001,25.96" Dependent="" Field="" Inverse="" Label="TipoEquipo (1)" Name="TipoEquipo" Principal="TipoEquipo" PropertyAccessMode="PropertyAccessMode.Default" Type="TipoEquipo" />
+    <Node Id="Equipo.Ubicacion" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 150" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="197.614065009221,699.540557587438,112.746666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Ubicacion (string)" MaxLength="(150)" Name="Ubicacion" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="IModel" Category="Model" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]] InversePropertyAttributeConvention:InverseNavigations: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]] NonNullableConventionState: System.Reflection.NullabilityInfoContext Relational:MaxIdentifierLength: 128 SqlServer:ValueGenerationStrategy: IdentityColumn" Bounds="23.1440650092208,19.940557587438,1138.19166666667,1101.32" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" Label="ApplicationDbContext" ProductVersion="10.0.13" PropertyAccessMode="PropertyAccessMode.Default" UseManualLocation="True" />
+    <Node Id="Mantenimiento" Category="EntityType" Annotations="Relational:TableName: Mantenimiento RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="353.992398342554,59.940557587438,413.543333333333,253.84" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Mantenimiento" Name="Mantenimiento" />
+    <Node Id="Mantenimiento.Estado" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 30" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="587.269065009221,99.940557587438,96.0566666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Estado (string)" MaxLength="(30)" Name="Estado" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Mantenimiento.FechaProgramada" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="570.875731675887,267.820557587438,176.66,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="FechaProgramada (DateTime)" MaxLength="None" Name="FechaProgramada" PropertyAccessMode="PropertyAccessMode.Default" Type="DateTime" ValueGenerated="None" />
+    <Node Id="Mantenimiento.FechaRealizada" Category="Property Optional" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="373.992398342554,267.820557587438,166.883333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="False" IsShadow="False" IsUnicode="True" Label="FechaRealizada (DateTime?)" MaxLength="None" Name="FechaRealizada" PropertyAccessMode="PropertyAccessMode.Default" Type="DateTime?" ValueGenerated="None" />
+    <Node Id="Mantenimiento.IdMantenimiento" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="503.129065009221,155.900557587438,135.67,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdMantenimiento (int)" MaxLength="None" Name="IdMantenimiento" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Mantenimiento.IdPlan" Category="Property Foreign" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="480.195731675887,99.940557587438,77.0733333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdPlan (int)" MaxLength="None" Name="IdPlan" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Mantenimiento.IdTecnico" Category="Property Foreign" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="373.992398342554,155.900557587438,99.1366666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="False" IsRequired="False" IsShadow="False" IsUnicode="True" Label="IdTecnico (int?)" MaxLength="None" Name="IdTecnico" PropertyAccessMode="PropertyAccessMode.Default" Type="int?" ValueGenerated="None" />
+    <Node Id="Mantenimiento.Observaciones" Category="Property Optional" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 500" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="373.992398342554,211.860557587438,137.76,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="False" IsShadow="False" IsUnicode="True" Label="Observaciones (string)" MaxLength="(500)" Name="Observaciones" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Mantenimiento.PlanMantenimiento" Category="Navigation Property" Bounds="541.752398342554,211.860557587438,140.64,25.96" Dependent="" Field="" Inverse="" Label="PlanMantenimiento (1)" Name="PlanMantenimiento" Principal="PlanMantenimiento" PropertyAccessMode="PropertyAccessMode.Default" Type="PlanMantenimiento" />
+    <Node Id="Mantenimiento.Tecnico" Category="Navigation Property" Bounds="373.992398342554,99.940557587438,76.2033333333333,25.96" Dependent="" Field="" Inverse="" Label="Tecnico (1)" Name="Tecnico" Principal="Tecnico" PropertyAccessMode="PropertyAccessMode.Default" Type="Tecnico" />
+    <Node Id="PlanMantenimiento" Category="EntityType" Annotations="Relational:TableName: PlanMantenimiento RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="66.6090650092208,359.740557587438,328.31,197.88" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="PlanMantenimiento" Name="PlanMantenimiento" />
+    <Node Id="PlanMantenimiento.Activo" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="297.595731675887,399.740557587438,77.3233333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Activo (int)" MaxLength="None" Name="Activo" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PlanMantenimiento.DescripcionTarea" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="86.6090650092208,511.660557587438,149.956666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="DescripcionTarea (string)" MaxLength="(255)" Name="DescripcionTarea" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="PlanMantenimiento.Equipo" Category="Navigation Property" Bounds="86.6090650092208,399.740557587438,73.9133333333333,25.96" Dependent="" Field="" Inverse="" Label="Equipo (1)" Name="Equipo" Principal="Equipo" PropertyAccessMode="PropertyAccessMode.Default" Type="Equipo" />
+    <Node Id="PlanMantenimiento.FrecuenciaDias" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="208.075731675887,455.700557587438,123.076666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="FrecuenciaDias (int)" MaxLength="None" Name="FrecuenciaDias" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PlanMantenimiento.IdEquipo" Category="Property Foreign" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="86.6090650092208,455.700557587438,91.4666666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdEquipo (int)" MaxLength="None" Name="IdEquipo" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PlanMantenimiento.IdPlan" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="190.522398342554,399.740557587438,77.0733333333334,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdPlan (int)" MaxLength="None" Name="IdPlan" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Tecnico" Category="EntityType" Annotations="Relational:TableName: Tecnico RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="425.160731675887,359.740557587438,271.206666666667,197.88" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Tecnico" Name="Tecnico" />
+    <Node Id="Tecnico.Activo" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="445.160731675887,399.740557587438,77.3233333333334,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Activo (int)" MaxLength="None" Name="Activo" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Tecnico.Correo" Category="Property Optional" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 150" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="445.160731675887,455.700557587438,96.7366666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="False" IsShadow="False" IsUnicode="True" Label="Correo (string)" MaxLength="(150)" Name="Correo" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Tecnico.Especialidad" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="445.160731675887,511.660557587438,125.726666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Especialidad (string)" MaxLength="(100)" Name="Especialidad" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Tecnico.IdTecnico" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="552.484065009221,399.740557587438,93.7566666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdTecnico (int)" MaxLength="None" Name="IdTecnico" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Tecnico.Nombre" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="571.897398342554,455.700557587438,104.47,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Nombre (string)" MaxLength="(100)" Name="Nombre" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="TipoEquipo" Category="EntityType" Annotations="Relational:TableName: Tipo_Equipo RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="149.587398342554,903.380557587438,162.353333333333,197.88" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="TipoEquipo" Name="TipoEquipo" />
+    <Node Id="TipoEquipo.Descripcion" Category="Property Optional" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="169.587398342554,1055.30055758744,122.353333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="False" IsShadow="False" IsUnicode="True" Label="Descripcion (string)" MaxLength="(255)" Name="Descripcion" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="TipoEquipo.IdTipoEquipo" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="169.587398342554,999.340557587439,114.743333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdTipoEquipo (int)" MaxLength="None" Name="IdTipoEquipo" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="TipoEquipo.Nombre" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="169.587398342554,943.380557587438,104.47,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Nombre (string)" MaxLength="(100)" Name="Nombre" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Usuario" Category="EntityType" Annotations="" BaseClass="" Bounds="797.535731675887,59.940557587438,343.8,197.88" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Usuario" Name="Usuario" />
+    <Node Id="Usuario.Activo" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="817.535731675888,99.940557587438,77.3233333333334,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Activo (int)" MaxLength="None" Name="Activo" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Usuario.Clave" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="1032.24573167589,99.940557587438,89.0899999999999,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Clave (string)" MaxLength="(255)" Name="Clave" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Usuario.IdUsuario" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="817.535731675887,155.900557587438,94.8933333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="IdUsuario (int)" MaxLength="None" Name="IdUsuario" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Usuario.NombreCompleto" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="817.535731675888,211.860557587438,156.6,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="NombreCompleto (string)" MaxLength="(100)" Name="NombreCompleto" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Usuario.NombreUsuario" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="942.429065009221,155.900557587438,144.813333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="NombreUsuario (string)" MaxLength="(50)" Name="NombreUsuario" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Usuario.Rol" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 30" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="924.859065009221,99.940557587438,77.3866666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Rol (string)" MaxLength="(30)" Name="Rol" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+  </Nodes>
+  <Links>
+    <Link Source="Equipo" Target="Equipo.CodigoActivo" Category="Contains" />
+    <Link Source="Equipo" Target="Equipo.EstadoOperativo" Category="Contains" />
+    <Link Source="Equipo" Target="Equipo.FechaIngreso" Category="Contains" />
+    <Link Source="Equipo" Target="Equipo.IdEquipo" Category="Contains" />
+    <Link Source="Equipo" Target="Equipo.IdTipoEquipo" Category="Contains" />
+    <Link Source="Equipo" Target="Equipo.Nombre" Category="Contains" />
+    <Link Source="Equipo" Target="Equipo.TipoEquipo" Category="Contains" />
+    <Link Source="Equipo" Target="Equipo.Ubicacion" Category="Contains" />
+    <Link Source="Equipo" Target="TipoEquipo" Category="Foreign Key" Annotations="" Bounds="230.764053344727,857.420959472656,0,36.9600830078125" From="Equipo.IdTipoEquipo" IsUnique="False" Label="1:*" LabelBounds="216.690733678218,872.420282906322,14.0733333333335,15.96" Name="Equipo -&gt; TipoEquipo" To="TipoEquipo.IdTipoEquipo" />
+    <Link Source="IModel" Target="Equipo" Category="Contains" />
+    <Link Source="IModel" Target="Mantenimiento" Category="Contains" />
+    <Link Source="IModel" Target="PlanMantenimiento" Category="Contains" />
+    <Link Source="IModel" Target="Tecnico" Category="Contains" />
+    <Link Source="IModel" Target="TipoEquipo" Category="Contains" />
+    <Link Source="IModel" Target="Usuario" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.Estado" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.FechaProgramada" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.FechaRealizada" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.IdMantenimiento" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.IdPlan" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.IdTecnico" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.Observaciones" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.PlanMantenimiento" Category="Contains" />
+    <Link Source="Mantenimiento" Target="Mantenimiento.Tecnico" Category="Contains" />
+    <Link Source="Mantenimiento" Target="PlanMantenimiento" Category="Foreign Key" Annotations="" Bounds="357.827850341797,313.7802734375,48.8504028320313,40.2379760742188" From="Mantenimiento.IdPlan" IsUnique="False" Label="1:*" LabelBounds="378.77966307048,328.779569434618,14.0733333333332,15.96" Name="Mantenimiento -&gt; PlanMantenimiento" To="PlanMantenimiento.IdPlan" />
+    <Link Source="Mantenimiento" Target="Tecnico" Category="Foreign Key" Annotations="" Bounds="560.764038085938,313.7802734375,0,36.9600219726563" From="Mantenimiento.IdTecnico" IsUnique="False" Label="1:*" LabelBounds="546.690728590577,328.779569434618,14.0733333333334,15.96" Name="Mantenimiento -&gt; Tecnico" To="Tecnico.IdTecnico" />
+    <Link Source="PlanMantenimiento" Target="Equipo" Category="Foreign Key" Annotations="" Bounds="230.764053344727,557.62060546875,0,36.9600219726563" From="PlanMantenimiento.IdEquipo" IsUnique="False" Label="1:*" LabelBounds="216.690733678218,572.619889449592,14.0733333333335,15.96" Name="PlanMantenimiento -&gt; Equipo" To="Equipo.IdEquipo" />
+    <Link Source="PlanMantenimiento" Target="PlanMantenimiento.Activo" Category="Contains" />
+    <Link Source="PlanMantenimiento" Target="PlanMantenimiento.DescripcionTarea" Category="Contains" />
+    <Link Source="PlanMantenimiento" Target="PlanMantenimiento.Equipo" Category="Contains" />
+    <Link Source="PlanMantenimiento" Target="PlanMantenimiento.FrecuenciaDias" Category="Contains" />
+    <Link Source="PlanMantenimiento" Target="PlanMantenimiento.IdEquipo" Category="Contains" />
+    <Link Source="PlanMantenimiento" Target="PlanMantenimiento.IdPlan" Category="Contains" />
+    <Link Source="Tecnico" Target="Tecnico.Activo" Category="Contains" />
+    <Link Source="Tecnico" Target="Tecnico.Correo" Category="Contains" />
+    <Link Source="Tecnico" Target="Tecnico.Especialidad" Category="Contains" />
+    <Link Source="Tecnico" Target="Tecnico.IdTecnico" Category="Contains" />
+    <Link Source="Tecnico" Target="Tecnico.Nombre" Category="Contains" />
+    <Link Source="TipoEquipo" Target="TipoEquipo.Descripcion" Category="Contains" />
+    <Link Source="TipoEquipo" Target="TipoEquipo.IdTipoEquipo" Category="Contains" />
+    <Link Source="TipoEquipo" Target="TipoEquipo.Nombre" Category="Contains" />
+    <Link Source="Usuario" Target="Usuario.Activo" Category="Contains" />
+    <Link Source="Usuario" Target="Usuario.Clave" Category="Contains" />
+    <Link Source="Usuario" Target="Usuario.IdUsuario" Category="Contains" />
+    <Link Source="Usuario" Target="Usuario.NombreCompleto" Category="Contains" />
+    <Link Source="Usuario" Target="Usuario.NombreUsuario" Category="Contains" />
+    <Link Source="Usuario" Target="Usuario.Rol" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="Contains" Label="Contiene" Description="Indica si el origen del vínculo contiene el objeto de destino." CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contenido por" IsContainment="True" OutgoingActionLabel="Contiene" />
+    <Category Id="EntityType" />
+    <Category Id="Foreign Key" />
+    <Category Id="Model" />
+    <Category Id="Navigation Property" />
+    <Category Id="Property Foreign" />
+    <Category Id="Property Optional" />
+    <Category Id="Property Primary" />
+    <Category Id="Property Required" />
+  </Categories>
+  <Properties>
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass" Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Field" Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Grupo" Description="Muestra el nodo como grupo" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsAbstract" Label="IsAbstract" Description="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="Label" Label="Etiqueta" Description="Etiqueta Displayable de un objeto Annotatable." DataType="System.String" />
+    <Property Id="LabelBounds" DataType="System.Windows.Rect" />
+    <Property Id="MaxLength" DataType="System.String" />
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type" Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
+      <Condition Expression="HasCategory('EntityType')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Required" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Required')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Property" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Property')" />
+      <Setter Property="Background" Value="#FF990000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Collection" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Collection')" />
+      <Setter Property="Background" Value="#FFFF3232" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Model" ValueLabel="True">
+      <Condition Expression="HasCategory('Model')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+</DirectedGraph>

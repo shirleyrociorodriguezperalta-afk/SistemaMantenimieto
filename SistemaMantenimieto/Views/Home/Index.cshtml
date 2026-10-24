@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Bienvenido - Sistema de Mantenimiento";
+}
+
+<!-- Hero Section / Presentación principal -->
+<div class="px-4 py-5 my-4 text-center bg-light rounded-3 shadow-sm border">
+    <div class="py-3">
+        <h1 class="display-4 fw-bold text-primary mb-3">
+            <i class="bi bi-tools me-2"></i>Sistema de Mantenimiento Preventivo
+        </h1>
+        <p class="lead text-secondary mb-4 mx-auto" style="max-width: 750px;">
+            Plataforma institucional para el control, programación y seguimiento de los mantenimientos preventivos y 
+            correctivos del equipo de cómputo universitario.
+        </p>
+
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg px-4 me-sm-3 shadow">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar Sesión
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Tarjetas informativas de características -->
+<div class="row text-center mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+                <i class="bi bi-cpu text-primary display-4 mb-3"></i>
+                <h5 class="card-title fw-bold">Gestión de Equipos</h5>
+                <p class="card-text text-muted">Control centralizado del inventario de hardware y laboratorios.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+                <i class="bi bi-person-badge text-primary display-4 mb-3"></i>
+                <h5 class="card-title fw-bold">Personal Técnico</h5>
+                <p class="card-text text-muted">Asignación eficiente de tareas de mantenimiento por especialista.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+                <i class="bi bi-shield-check text-primary display-4 mb-3"></i>
+                <h5 class="card-title fw-bold">Seguridad y Roles</h5>
+                <p class="card-text text-muted">Autenticación cifrada con BCrypt para Administradores y Técnicos.</p>
+            </div>
+        </div>
+    </div>
+</div>

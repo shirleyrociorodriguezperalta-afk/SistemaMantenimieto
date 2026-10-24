@@ -1,0 +1,61 @@
+﻿@model SistemaMantenimiento.Entities.Mantenimiento
+
+@{
+    ViewData["Title"] = "Editar Mantenimiento";
+}
+
+<div class="container mt-4" style="max-width: 600px;">
+    <div class="card shadow border-0">
+        <div class="card-header bg-primary text-white py-3">
+            <h4 class="mb-0 fs-5"><i class="bi bi-pencil-square me-2"></i>Editar Mantenimiento</h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Editar" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="IdMantenimiento" />
+                <input type="hidden" asp-for="IdPlan" />
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="FechaProgramada" class="form-label fw-bold">Fecha Programada</label>
+                    <input asp-for="FechaProgramada" class="form-control" type="date" />
+                    <span asp-validation-for="FechaProgramada" class="text-danger small"></span>
+                </div>
+
+                <!-- Asignación del Técnico Responsable -->
+                <div class="mb-3">
+                    <label asp-for="IdTecnico" class="form-label fw-bold">Técnico Responsable</label>
+                    <select asp-for="IdTecnico" asp-items="ViewBag.Tecnicos" class="form-select">
+                        <option value="">-- Sin Técnico Asignado --</option>
+                    </select>
+                    <span asp-validation-for="IdTecnico" class="text-danger small"></span>
+                </div>
+
+                <!-- Estado en solo lectura (Calculado automáticamente por el sistema) -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Estado Actual (Calculado)</label>
+                    <input type="text" class="form-control bg-light" value="@Model.Estado" readonly />
+                    <small class="text-muted">El estado se actualiza automáticamente en función de la fecha programada.</small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Observaciones" class="form-label fw-bold">Observaciones</label>
+                    <textarea asp-for="Observaciones" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Observaciones" class="text-danger small"></span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-4 pt-2 border-top">
+                    <a asp-action="Index" class="btn btn-outline-secondary px-4">Cancelar</a>
+                    <button type="submit" class="btn btn-primary px-4 shadow-sm">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,217 @@
+﻿@model IEnumerable<SistemaMantenimiento.Entities.Mantenimiento>
+
+@{
+    ViewData["Title"] = "Tablero de Mantenimientos";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="bi bi-speedometer2 me-2"></i>Tablero Principal de Mantenimientos</h2>
+</div>
+
+@if (TempData["MensajeExito"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show shadow-sm mb-4" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i> @TempData["MensajeExito"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<!-- ================= 1. TARJETAS KPI (DASHBOARD VISUAL) ================= -->
+<div class="row g-3 mb-4">
+    <!-- Tarjeta: Equipos Totales -->
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm bg-primary text-white h-100">
+            <div class="card-body d-flex align-items-center justify-content-between p-3">
+                <div>
+                    <h6 class="text-white-50 text-uppercase fw-bold mb-1" style="font-size: 0.75rem;">Total Equipos</h6>
+                    <h2 class="mb-0 fw-bold">@(ViewBag.TotalEquipos ?? 0)</h2>
+                </div>
+                <div class="fs-1 text-white-50">
+                    <i class="bi bi-laptop"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Equipos Operativos -->
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm bg-success text-white h-100">
+            <div class="card-body d-flex align-items-center justify-content-between p-3">
+                <div>
+                    <h6 class="text-white-50 text-uppercase fw-bold mb-1" style="font-size: 0.75rem;">Equipos Operativos</h6>
+                    <h2 class="mb-0 fw-bold">@(ViewBag.EquiposOperativos ?? 0)</h2>
+                </div>
+                <div class="fs-1 text-white-50">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Equipos en Mantenimiento -->
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm bg-warning text-dark h-100">
+            <div class="card-body d-flex align-items-center justify-content-between p-3">
+                <div>
+                    <h6 class="text-dark-50 text-uppercase fw-bold mb-1" style="font-size: 0.75rem;">En Mantenimiento</h6>
+                    <h2 class="mb-0 fw-bold">@(ViewBag.EquiposEnMantenimiento ?? 0)</h2>
+                </div>
+                <div class="fs-1 text-dark-50">
+                    <i class="bi bi-tools"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Técnicos Registrados -->
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm bg-info text-white h-100">
+            <div class="card-body d-flex align-items-center justify-content-between p-3">
+                <div>
+                    <h6 class="text-white-50 text-uppercase fw-bold mb-1" style="font-size: 0.75rem;">Técnicos Activos</h6>
+                    <h2 class="mb-0 fw-bold">@(ViewBag.TecnicosTotales ?? 0)</h2>
+                </div>
+                <div class="fs-1 text-white-50">
+                    <i class="bi bi-person-badge-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= 2. TABLA INTERACTIVA CON DATATABLES ================= -->
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white py-3">
+        <h5 class="card-title mb-0 fw-bold text-secondary">
+            <i class="bi bi-list-task me-2"></i>Mantenimientos Pendientes y Programados
+        </h5>
+    </div>
+    <div class="card-body">
+        <table id="tablaMantenimientos" class="table table-striped table-hover align-middle w-100">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Equipo / Código</th>
+                    <th>Fecha Programada</th>
+                    <th>Técnico Responsable</th>
+                    <th>Estado</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdMantenimiento</td>
+                        <td>
+                            @if (item.PlanMantenimiento?.Equipo != null)
+                            {
+                                <div class="fw-bold text-primary">
+                                    <i class="bi bi-laptop me-1"></i>@item.PlanMantenimiento.Equipo.Nombre
+                                </div>
+                                <small class="text-muted">
+                                    <strong>Cód:</strong> @(item.PlanMantenimiento.Equipo.CodigoActivo ?? "S/C")
+                                </small>
+                            }
+                            else
+                            {
+                                <span class="text-muted"><em>Plan #@item.IdPlan (Sin Equipo)</em></span>
+                            }
+                        </td>
+                        <td>@item.FechaProgramada.ToString("dd/MM/yyyy")</td>
+                        <td>@(item.Tecnico?.Nombre ?? "Sin Asignar")</td>
+                        <td>
+                            @if (string.Equals(item.Estado, "Realizado", StringComparison.OrdinalIgnoreCase))
+                            {
+                                <span class="badge bg-success">
+                                    <i class="bi bi-check-circle me-1"></i> Realizado
+                                </span>
+                            }
+                            else if (string.Equals(item.Estado, "Vencido", StringComparison.OrdinalIgnoreCase))
+                            {
+                                <span class="badge bg-danger">
+                                    <i class="bi bi-exclamation-triangle-fill me-1"></i> Vencido
+                                </span>
+                            }
+                            else if (string.Equals(item.Estado, "Próximo", StringComparison.OrdinalIgnoreCase))
+                            {
+                                <span class="badge bg-warning text-dark">
+                                    <i class="bi bi-clock-history me-1"></i> Próximo
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-primary">
+                                    <i class="bi bi-calendar-check me-1"></i> Vigente
+                                </span>
+                            }
+                        </td>
+                        <td class="text-center">
+                            <!-- Registrar ejecución del mantenimiento -->
+                            <a asp-action="Registrar" asp-route-id="@item.IdMantenimiento" class="btn btn-sm btn-success me-1" title="Registrar Ejecución">
+                                <i class="bi bi-pencil-square me-1"></i> Registrar
+                            </a>
+
+                            <!-- Acciones exclusivas de Administrador -->
+                            @if (User.IsInRole("Administrador"))
+                            {
+                                <a asp-action="Editar" asp-route-id="@item.IdMantenimiento" class="btn btn-sm btn-outline-primary me-1" title="Editar">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                                <a asp-action="Eliminar" asp-route-id="@item.IdMantenimiento" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#tablaMantenimientos').DataTable({
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json"
+                },
+                "pageLength": 10,
+                "responsive": true,
+                "order": [[0, "desc"]],
+                "dom": '<"d-flex justify-content-between align-items-center mb-3"Bf>rt<"d-flex justify-content-between align-items-center mt-3"lip>',
+                "buttons": [
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="bi bi-file-earmark-excel me-1"></i> Excel',
+                        className: 'btn btn-success btn-sm me-1',
+                        title: 'Reporte_Mantenimientos_Universitarios',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4]
+                        }
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="bi bi-file-earmark-pdf me-1"></i> PDF',
+                        className: 'btn btn-danger btn-sm me-1',
+                        title: 'Reporte de Mantenimientos Programados',
+                        orientation: 'landscape',
+                        pageSize: 'LETTER',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4]
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="bi bi-printer me-1"></i> Imprimir',
+                        className: 'btn btn-secondary btn-sm',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4]
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+}

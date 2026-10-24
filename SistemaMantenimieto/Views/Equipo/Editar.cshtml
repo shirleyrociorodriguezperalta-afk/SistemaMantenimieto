@@ -1,0 +1,58 @@
+﻿@model SistemaMantenimiento.Models.EquipoViewModel
+
+@{
+    ViewData["Title"] = "Editar Equipo";
+}
+
+<div class="container mt-4" style="max-width: 600px;">
+    <div class="card shadow">
+        <div class="card-header bg-warning text-dark">
+            <h4 class="mb-0">✏️ Modificar Equipo</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Editar" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="IdEquipo" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="CodigoActivo" class="form-label font-weight-bold"></label>
+                    <input asp-for="CodigoActivo" class="form-control" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Nombre" class="form-label font-weight-bold"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IdTipoEquipo" class="form-label font-weight-bold"></label>
+                    <select asp-for="IdTipoEquipo" class="form-select" asp-items="Model.TiposEquipo"></select>
+                    <span asp-validation-for="IdTipoEquipo" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Ubicacion" class="form-label font-weight-bold"></label>
+                    <input asp-for="Ubicacion" class="form-control" />
+                    <span asp-validation-for="Ubicacion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EstadoOperativo" class="form-label font-weight-bold"></label>
+                    <select asp-for="EstadoOperativo" class="form-select">
+                        <option value="Operativo">Operativo</option>
+                        <option value="En Mantenimiento">En Mantenimiento</option>
+                        <option value="Fuera de Servicio">Fuera de Servicio</option>
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Actualizar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

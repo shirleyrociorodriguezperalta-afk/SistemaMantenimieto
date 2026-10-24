@@ -1,0 +1,50 @@
+﻿@model SistemaMantenimiento.Models.TecnicoViewModel
+
+@{
+    ViewData["Title"] = "Registrar Técnico";
+}
+
+<div class="container mt-4" style="max-width: 600px;">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">➕ Registrar Nuevo Técnico</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Crear" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Nombre" class="form-label font-weight-bold"></label>
+                    <input asp-for="Nombre" class="form-control" placeholder="Ej: Carlos Mendoza" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Especialidad" class="form-label font-weight-bold"></label>
+                    <input asp-for="Especialidad" class="form-control" placeholder="Ej: Hardware / Redes" />
+                    <span asp-validation-for="Especialidad" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Correo" class="form-label font-weight-bold"></label>
+                    <input asp-for="Correo" type="email" class="form-control" placeholder="Ej: cmendoza@universidad.edu" />
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Activo" class="form-label font-weight-bold"></label>
+                    <select asp-for="Activo" class="form-select">
+                        <option value="1">Activo</option>
+                        <option value="0">Inactivo</option>
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-success">Guardar Técnico</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
